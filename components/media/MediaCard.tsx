@@ -1,11 +1,11 @@
 import Link from "next/link";
-import type { AnimeSummary } from "@/lib/media/models";
+import type { MediaSummary } from "@/lib/media/models";
 import { formatScore, yearFrom } from "@/lib/utils/format";
 import Badge from "@/components/ui/Badge";
 import GlassCard from "@/components/ui/GlassCard";
 import MediaThumbnail from "@/components/ui/MediaThumbnail";
 
-export default function MediaCard({ anime }: { anime: AnimeSummary }) {
+export default function MediaCard({ anime }: { anime: MediaSummary }) {
   return (
     <Link href={`/anime/${anime.id}`} className="group block">
       <GlassCard hoverGlow className="overflow-hidden">

@@ -1,8 +1,8 @@
-import type { AnimeSummary } from "@/lib/media/models";
+import type { MediaSummary } from "@/lib/media/models";
 import MediaCard from "@/components/media/MediaCard";
 import EmptyState from "@/components/ui/EmptyState";
 
-export default function MediaGrid({ items }: { items: AnimeSummary[] }) {
+export default function MediaGrid({ items }: { items: MediaSummary[] }) {
   if (items.length === 0) {
     return <EmptyState>No results found.</EmptyState>;
   }
