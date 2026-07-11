@@ -127,17 +127,19 @@ export async function httpFetch<T>(url: string, opts: HttpFetchOptions = {}): Pr
             }
           : cause;
 
-      console.error(
-        `[httpFetch] attempt ${attempt + 1}/${retries + 1} failed for ${url}`,
-        {
-          provider,
-          aborted: controller.signal.aborted,
-          message: err instanceof Error ? err.message : String(err),
-          cause: causeInfo,
-        },
-      );
+      const willRetry = attempt < retries;
+      // Only escalate to console.error once retries are exhausted — logging
+      // every attempt at error level flags a transient, self-healing retry as
+      // a hard failure in Next.js's dev overlay.
+      const log = willRetry ? console.warn : console.error;
+      log(`[httpFetch] attempt ${attempt + 1}/${retries + 1} failed for ${url}`, {
+        provider,
+        aborted: controller.signal.aborted,
+        message: err instanceof Error ? err.message : String(err),
+        cause: causeInfo,
+      });
 
-      if (attempt < retries) {
+      if (willRetry) {
         await sleep(backoffMs(attempt));
         continue;
       }
