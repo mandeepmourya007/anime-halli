@@ -1,0 +1,38 @@
+components/layout/NavLinks.tsx
+  s_205097a93f04df::t_bbe6dca2d3c8d2 17
+  s_205097a93f04df::t_9054e4097d213e 26
+  s_205097a93f04df::t_56326882bfe62c 1-16,18-24,31-38
+  s_205097a93f04df::t_322d45b4c783ad 25,27-30
+app/globals.css
+  s_205097a93f04df::t_fd957a5c6b4331 137-151
+components/search/SearchBar.tsx
+  s_205097a93f04df::t_7145c1862f16c6 5,11,18,22-25,27-30,32-41,43-64
+components/layout/Navbar.tsx
+  s_205097a93f04df::t_5774c7ab765e38 16
+  s_205097a93f04df::t_cf754a0aea0f83 20-23
+  s_205097a93f04df::t_21fad96c129550 18-19,24,26-30
+  s_205097a93f04df::t_23d3e6e1206482 12
+  s_205097a93f04df::t_5b1a3a55ff769f 17
+  s_205097a93f04df::t_a3d7aa00f333fe 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "f3c7782d160a60de46d7f3c539260eb0c996ec0c",
+  "prompts": {},
+  "humans": {
+    "h_7405c875038418": {
+      "author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  },
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
