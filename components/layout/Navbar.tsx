@@ -2,12 +2,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import Container from "@/components/layout/Container";
 import SearchBar from "@/components/search/SearchBar";
-
-const CATEGORY_LINKS = [
-  { href: "/?tab=top", label: "Top" },
-  { href: "/?tab=airing", label: "Airing" },
-  { href: "/?tab=movies", label: "Movies" },
-];
+import { HOME_TABS } from "@/lib/media/tabs";
 
 export default function Navbar() {
   return (
@@ -19,13 +14,13 @@ export default function Navbar() {
           </Link>
 
           <nav className="hidden items-center gap-4 text-sm font-medium text-white/70 sm:flex">
-            {CATEGORY_LINKS.map((link) => (
+            {HOME_TABS.map((tab) => (
               <Link
-                key={link.href}
-                href={link.href}
+                key={tab.value}
+                href={`/?tab=${tab.value}`}
                 className="transition-colors hover:text-white"
               >
-                {link.label}
+                {tab.label}
               </Link>
             ))}
           </nav>

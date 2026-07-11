@@ -1,16 +1,11 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils/format";
-
-const TABS = [
-  { value: "top", label: "Top" },
-  { value: "airing", label: "Airing" },
-  { value: "movies", label: "Movies" },
-] as const;
+import { HOME_TABS } from "@/lib/media/tabs";
 
 export default function CategoryTabs({ activeTab }: { activeTab: string }) {
   return (
     <div className="glass inline-flex items-center gap-1 rounded-squircle p-1.5">
-      {TABS.map((tab) => {
+      {HOME_TABS.map((tab) => {
         const isActive = tab.value === activeTab;
         return (
           <Link
