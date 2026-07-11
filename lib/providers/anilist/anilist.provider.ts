@@ -1,4 +1,4 @@
-import type { AnimeDetail, AnimeSummary, Character, Genre, Paged } from "@/lib/media/models";
+import type { MediaDetail, MediaSummary, CastMember, Genre, Paged } from "@/lib/media/models";
 import type { MediaProvider, GenreQuery, ListQuery } from "@/lib/media/provider";
 import type { ProviderConfig } from "@/lib/config/providers.config";
 import { ProviderError } from "@/lib/http/errors";
@@ -9,6 +9,8 @@ import { ProviderError } from "@/lib/http/errors";
  * the rest throw "not implemented" until this adapter is fleshed out (see plan's
  * Future Scope). Fully wiring this is intentionally out of scope for this pass.
  */
+
+const PREFIX = "anilist-";
 
 interface AniListMedia {
   id: number;
@@ -44,11 +46,12 @@ const TOP_QUERY = `
   }
 `;
 
-function toSummary(m: AniListMedia): AnimeSummary {
+function toSummary(m: AniListMedia): MediaSummary {
   return {
-    id: String(m.id),
+    id: `${PREFIX}${m.id}`,
     title: m.title.english ?? m.title.romaji,
     posterUrl: m.coverImage.extraLarge ?? null,
+    bannerUrl: null, // AniList's bannerImage exists but isn't fetched by this scaffold's query yet.
     score: m.averageScore ? m.averageScore / 10 : null,
     type: m.format === "MOVIE" ? "Movie" : m.format === "TV" ? "TV" : "Unknown",
     year: m.seasonYear ?? null,
@@ -63,7 +66,7 @@ export class AniListProvider implements MediaProvider {
     this.baseUrl = config.baseUrl;
   }
 
-  async getTop(q: ListQuery): Promise<Paged<AnimeSummary>> {
+  async getTop(q: ListQuery): Promise<Paged<MediaSummary>> {
     // AniList's GraphQL endpoint needs a POST body, unlike the shared GET-oriented
     // `httpFetch`. Wired directly here just to prove the `MediaProvider` contract
     // holds for a non-REST API; full retry/backoff wiring is Future Scope.
@@ -91,31 +94,31 @@ export class AniListProvider implements MediaProvider {
     };
   }
 
-  async getAiring(): Promise<Paged<AnimeSummary>> {
+  async getAiring(): Promise<Paged<MediaSummary>> {
     throw new Error("AniListProvider.getAiring not implemented yet");
   }
 
-  async getMovies(): Promise<Paged<AnimeSummary>> {
+  async getMovies(): Promise<Paged<MediaSummary>> {
     throw new Error("AniListProvider.getMovies not implemented yet");
   }
 
-  async search(): Promise<Paged<AnimeSummary>> {
+  async search(): Promise<Paged<MediaSummary>> {
     throw new Error("AniListProvider.search not implemented yet");
   }
 
-  async getById(): Promise<AnimeDetail> {
+  async getById(): Promise<MediaDetail> {
     throw new Error("AniListProvider.getById not implemented yet");
   }
 
-  async getCharacters(): Promise<Character[]> {
-    throw new Error("AniListProvider.getCharacters not implemented yet");
+  async getCast(): Promise<CastMember[]> {
+    throw new Error("AniListProvider.getCast not implemented yet");
   }
 
   async getGenres(): Promise<Genre[]> {
     throw new Error("AniListProvider.getGenres not implemented yet");
   }
 
-  async getByGenre(q: GenreQuery): Promise<Paged<AnimeSummary>> {
+  async getByGenre(q: GenreQuery): Promise<Paged<MediaSummary>> {
     void q;
     throw new Error("AniListProvider.getByGenre not implemented yet");
   }
