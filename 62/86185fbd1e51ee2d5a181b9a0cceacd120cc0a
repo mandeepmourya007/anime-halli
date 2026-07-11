@@ -1,0 +1,33 @@
+lib/providers/jikan/jikan.mappers.test.ts
+  s_205097a93f04df::t_67a74076162705 1-91
+vitest.config.ts
+  s_205097a93f04df::t_d8a49a24ee7135 1-13
+lib/providers/composite.provider.test.ts
+  s_205097a93f04df::t_524e54ff61cc63 2-3,6
+  s_205097a93f04df::t_b6f02351791841 1,4-5,7-105
+lib/providers/registry.test.ts
+  s_205097a93f04df::t_d1071e3c52dd98 1-49
+lib/providers/registry.ts
+  s_205097a93f04df::t_f730082147a8ca 19
+package.json
+  s_205097a93f04df::t_2ec260e92ebcc0 9-10
+  s_205097a93f04df::t_598adff854d187 27-28
+package-lock.json
+  s_205097a93f04df::t_e311a0f7b2811d 25-26,1312-1637,1645-1651,1955-1972,2631-2748,2751-2759,2761-2764,2767-2769,2771-2774,2777-2784,3019-3028,3239-3248,3661-3667,4150-4159,4170-4179,4321-4335,5973-5986,6095-6101,6340-6373,6675-6681,6698-6711,6943-6959,7008-7017,7310-7503,7609-7625
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "6286185fbd1e51ee2d5a181b9a0cceacd120cc0a",
+  "prompts": {},
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
