@@ -1,0 +1,19 @@
+lib/providers/jikan/jikan.mappers.ts
+  s_205097a93f04df::t_759b80fc009ebb 39-42,47,58
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "a933e09ec9d732e1f34f4913e8ce145309e8d1f8",
+  "prompts": {},
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
