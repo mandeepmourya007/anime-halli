@@ -7,6 +7,7 @@
 - [`.dockerignore`](../../.dockerignore)
 - [`docker-compose.yml`](../../docker-compose.yml) — local convenience wrapper.
 - [`deploy.sh`](../../deploy.sh) — build + (re)run the container, waits for a health response. `./deploy.sh -p 8080` to pick a port.
+- [`app/api/health/route.ts`](../../app/api/health/route.ts) + [`instrumentation.ts`](../../instrumentation.ts) — self-ping every 14 minutes (via Render's own `RENDER_EXTERNAL_URL`) to stop Render's free tier from spinning the service down after 15 min idle. No-op outside production.
 
 ## Known limitation
 
