@@ -1,0 +1,29 @@
+.dockerignore
+  s_205097a93f04df::t_d646a71bd5bd03 1-9
+docker-compose.yml
+  s_205097a93f04df::t_1f933a6088703f 1-9
+Dockerfile
+  s_205097a93f04df::t_06c381515b9de5 1-37
+README.md
+  s_205097a93f04df::t_c81ff97b61baf0 65-78
+  s_205097a93f04df::t_6eb34a72da98e7 47
+deploy.sh
+  s_205097a93f04df::t_082eaeceaa036d 48
+  s_205097a93f04df::t_4eb6b3e336fe51 1-47,49-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "a2344a9ff489099a77f0aa5b95fb68c286d16afc",
+  "prompts": {},
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
