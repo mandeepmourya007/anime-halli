@@ -22,6 +22,7 @@
 - `CastList` — character + Japanese voice-actor grid.
 - `TrailerEmbed` — YouTube iframe wrapper.
 - `CategoryTabs`, `Pagination` — tab switcher and first-3/last-3-page pagination.
+- `MediaLink` — every link into the detail route (`/anime/[id]`) goes through this; bakes in `prefetch={false}` since that route's data fetch hits rate-limited external APIs (TMDB, Watchmode) and Next's default viewport prefetching of a whole grid queues up badly on a real network.
 
 ## Search
 

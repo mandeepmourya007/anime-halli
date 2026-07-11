@@ -1,8 +1,8 @@
-import Link from "next/link";
 import type { MediaDetail, MediaSummary } from "@/lib/media/models";
 import { formatScore, truncate, yearFrom } from "@/lib/utils/format";
 import Badge from "@/components/ui/Badge";
 import MediaThumbnail from "@/components/ui/MediaThumbnail";
+import MediaLink from "@/components/media/MediaLink";
 import PosterHero from "@/components/media/PosterHero";
 
 type HeroAnime = MediaSummary | MediaDetail;
@@ -77,5 +77,5 @@ export default function HeroBanner({ anime, linked = true }: { anime: HeroAnime;
 
   if (!linked) return content;
 
-  return <Link href={`/anime/${anime.id}`}>{content}</Link>;
+  return <MediaLink id={anime.id}>{content}</MediaLink>;
 }

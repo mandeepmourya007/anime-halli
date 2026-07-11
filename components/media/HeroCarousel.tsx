@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { MediaSummary } from "@/lib/media";
 import { cn, formatScore, yearFrom } from "@/lib/utils/format";
 import Badge from "@/components/ui/Badge";
 import MediaThumbnail from "@/components/ui/MediaThumbnail";
+import MediaLink from "@/components/media/MediaLink";
 import PosterHero from "@/components/media/PosterHero";
 
 const ROTATE_MS = 6000;
@@ -49,7 +49,7 @@ export default function HeroCarousel({ items }: { items: MediaSummary[] }) {
 
   return (
     <div className="glass glass-sheen relative overflow-hidden rounded-squircle-lg">
-      <Link href={`/anime/${anime.id}`} className="block">
+      <MediaLink id={anime.id} className="block">
         {anime.bannerUrl ? (
           <>
             <MediaThumbnail
@@ -74,7 +74,7 @@ export default function HeroCarousel({ items }: { items: MediaSummary[] }) {
             </PosterHero>
           </div>
         )}
-      </Link>
+      </MediaLink>
 
       {slides.length > 1 && (
         <div className="relative flex justify-center gap-2 pb-4 sm:absolute sm:bottom-4 sm:right-6 sm:justify-end sm:pb-0">

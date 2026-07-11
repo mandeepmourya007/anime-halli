@@ -1,13 +1,13 @@
-import Link from "next/link";
 import type { MediaSummary } from "@/lib/media/models";
 import { formatScore, yearFrom } from "@/lib/utils/format";
 import Badge from "@/components/ui/Badge";
 import GlassCard from "@/components/ui/GlassCard";
 import MediaThumbnail from "@/components/ui/MediaThumbnail";
+import MediaLink from "@/components/media/MediaLink";
 
 export default function MediaCard({ anime }: { anime: MediaSummary }) {
   return (
-    <Link href={`/anime/${anime.id}`} className="group block">
+    <MediaLink id={anime.id} className="group block">
       <GlassCard hoverGlow className="overflow-hidden">
         <MediaThumbnail
           src={anime.posterUrl}
@@ -34,6 +34,6 @@ export default function MediaCard({ anime }: { anime: MediaSummary }) {
           </div>
         </div>
       </GlassCard>
-    </Link>
+    </MediaLink>
   );
 }
