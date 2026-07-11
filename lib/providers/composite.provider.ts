@@ -1,4 +1,4 @@
-import type { AnimeDetail, AnimeSummary, Character, Genre, Paged } from "@/lib/media/models";
+import type { MediaDetail, MediaSummary, CastMember, Genre, Paged } from "@/lib/media/models";
 import type { MediaProvider, GenreQuery, ListQuery, SearchQuery } from "@/lib/media/provider";
 import { NotFoundError, ProviderError } from "@/lib/http/errors";
 
@@ -46,35 +46,35 @@ export class CompositeProvider implements MediaProvider {
       : new ProviderError("All providers failed", { provider: this.name });
   }
 
-  getTop(q: ListQuery): Promise<Paged<AnimeSummary>> {
+  getTop(q: ListQuery): Promise<Paged<MediaSummary>> {
     return this.tryEach((p) => p.getTop(q));
   }
 
-  getAiring(q: ListQuery): Promise<Paged<AnimeSummary>> {
+  getAiring(q: ListQuery): Promise<Paged<MediaSummary>> {
     return this.tryEach((p) => p.getAiring(q));
   }
 
-  getMovies(q: ListQuery): Promise<Paged<AnimeSummary>> {
+  getMovies(q: ListQuery): Promise<Paged<MediaSummary>> {
     return this.tryEach((p) => p.getMovies(q));
   }
 
-  search(q: SearchQuery): Promise<Paged<AnimeSummary>> {
+  search(q: SearchQuery): Promise<Paged<MediaSummary>> {
     return this.tryEach((p) => p.search(q));
   }
 
-  getById(id: string): Promise<AnimeDetail> {
+  getById(id: string): Promise<MediaDetail> {
     return this.tryEach((p) => p.getById(id));
   }
 
-  getCharacters(id: string): Promise<Character[]> {
-    return this.tryEach((p) => p.getCharacters(id));
+  getCast(id: string): Promise<CastMember[]> {
+    return this.tryEach((p) => p.getCast(id));
   }
 
   getGenres(): Promise<Genre[]> {
     return this.tryEach((p) => p.getGenres());
   }
 
-  getByGenre(q: GenreQuery): Promise<Paged<AnimeSummary>> {
+  getByGenre(q: GenreQuery): Promise<Paged<MediaSummary>> {
     return this.tryEach((p) => p.getByGenre(q));
   }
 }

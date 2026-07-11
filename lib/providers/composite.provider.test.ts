@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { CompositeProvider } from "./composite.provider";
 import { AuthError, NotFoundError, ProviderError, RateLimitError } from "@/lib/http/errors";
 import type { MediaProvider } from "@/lib/media/provider";
-import type { AnimeDetail } from "@/lib/media/models";
+import type { MediaDetail } from "@/lib/media/models";
 
 function makeStubProvider(name: string, overrides: Partial<MediaProvider> = {}): MediaProvider {
   const notImplemented = () => Promise.reject(new Error(`${name}: not stubbed`));
@@ -13,14 +13,14 @@ function makeStubProvider(name: string, overrides: Partial<MediaProvider> = {}):
     getMovies: notImplemented,
     search: notImplemented,
     getById: notImplemented,
-    getCharacters: notImplemented,
+    getCast: notImplemented,
     getGenres: notImplemented,
     getByGenre: notImplemented,
     ...overrides,
   };
 }
 
-const FAKE_DETAIL = { id: "1", title: "Cowboy Bebop" } as AnimeDetail;
+const FAKE_DETAIL = { id: "1", title: "Cowboy Bebop" } as MediaDetail;
 
 describe("CompositeProvider", () => {
   it("returns the first provider's result when it succeeds", async () => {
