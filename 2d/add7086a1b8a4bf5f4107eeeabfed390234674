@@ -1,0 +1,30 @@
+lib/media/models.ts
+  s_205097a93f04df::t_4ef24b125f11cb 36-43
+  s_205097a93f04df::t_15b94d20122860 18-24
+  s_205097a93f04df::t_145c93ca3c4194 4-6,9-15,31-32,45,49,53,57-66,68-69
+  s_205097a93f04df::t_300be03d1061bf 25
+lib/media/provider.ts
+  s_205097a93f04df::t_d0ebed4667b373 1,14-19,24,35-40,42
+  s_205097a93f04df::t_4dd0244378c66d 27-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "2dadd7086a1b8a4bf5f4107eeeabfed390234674",
+  "prompts": {},
+  "humans": {
+    "h_7405c875038418": {
+      "author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  },
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
