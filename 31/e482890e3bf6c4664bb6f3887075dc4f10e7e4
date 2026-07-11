@@ -1,0 +1,31 @@
+components/media/MediaCard.tsx
+  s_205097a93f04df::t_0bab0c18c038f3 37
+  s_205097a93f04df::t_18de19ed69ac5e 6,10
+components/media/MediaLink.tsx
+  s_205097a93f04df::t_a563454b1f3c67 1-17
+components/media/HeroBanner.tsx
+  s_205097a93f04df::t_45dcd720f98c06 80
+  s_205097a93f04df::t_e175bdcb2f7b43 5
+"docs/mindmap/UI Components.md"
+  s_205097a93f04df::t_eb0d3f8882998c 25
+components/media/HeroCarousel.tsx
+  s_205097a93f04df::t_09583f00c746cb 8
+  s_205097a93f04df::t_b6ff126c26bf21 52
+  s_205097a93f04df::t_01ebc034c24767 77
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "31e482890e3bf6c4664bb6f3887075dc4f10e7e4",
+  "prompts": {},
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeepmourya007 <mandeepmourya007@gmail.com>"
+    }
+  }
+}
