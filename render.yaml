@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: anime-halli
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: NEXT_PUBLIC_SITE_URL
+        sync: false
+      - key: JIKAN_BASE_URL
+        value: https://api.jikan.moe/v4
+      - key: ANILIST_ENABLED
+        value: "false"
+      - key: ANILIST_BASE_URL
+        value: https://graphql.anilist.co
+      - key: ANILIST_API_KEY
+        sync: false

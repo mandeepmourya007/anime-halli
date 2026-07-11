@@ -21,6 +21,10 @@ ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME=0.0.0.0
+# Render's network doesn't route IPv6 to external hosts; Node's fetch (undici) can
+# otherwise pick an AAAA record for dual-stack APIs like Jikan (Cloudflare-fronted)
+# and fail with a bare "fetch failed" / no HTTP status.
+ENV NODE_OPTIONS="--dns-result-order=ipv4first"
 
 RUN addgroup --system --gid 1001 nodejs \
   && adduser --system --uid 1001 nextjs
