@@ -1,0 +1,81 @@
+lib/http/fetcher.ts
+  s_205097a93f04df::t_8e7eb2ad764f24 1,3-14,16,19-27,32-33,37-49,51-55,58-60,63-89,91-97,99-106,110-114,116-125
+  s_205097a93f04df::t_136c5a30bc5c2a 2,15,17-18,28-31,34-36,50,56-57,61-62,90,98,107-109,115
+lib/config/providers.config.ts
+  s_205097a93f04df::t_66417fe4c04f0e 22-29,38,48-49
+  s_205097a93f04df::t_b43efd8ef0e8d1 1-21,30-37,39-47,50-51
+lib/providers/registry.ts
+  s_205097a93f04df::t_012d3381ceab92 13-35,37-38
+  s_205097a93f04df::t_70c0c899f4c09f 1,8,36,55
+  s_205097a93f04df::t_d50e3b4dcf47e6 2-7,9-12,39-54,56-67
+lib/providers/anilist/anilist.provider.ts
+  s_205097a93f04df::t_3b7d182bb2b0a1 67,69-71,73-74,76-85
+  s_205097a93f04df::t_70c0c899f4c09f 1-2,7,58,68
+  s_205097a93f04df::t_b6c4ac6bb2eb06 4
+  s_205097a93f04df::t_83104ea2d28d5f 3,5-6,8-57,59-66,72,75,86-117,120-122
+  s_205097a93f04df::t_67cf630e8b9c79 118-119
+lib/providers/jikan/jikan.dto.ts
+  s_205097a93f04df::t_eece9c90481ab0 1-102
+lib/providers/jikan/jikan.provider.ts
+  s_205097a93f04df::t_4f935abff3283e 23-26
+  s_205097a93f04df::t_dddf0d92822d57 90
+  s_205097a93f04df::t_badee5ad4c11e1 11-18
+  s_205097a93f04df::t_9d0ea9cd923ec5 100
+  s_205097a93f04df::t_70c0c899f4c09f 1-2,27
+  s_205097a93f04df::t_78e725ac5f1531 51
+  s_205097a93f04df::t_2a4db41cec55c0 80
+  s_205097a93f04df::t_b2f629aa4a609f 53
+  s_205097a93f04df::t_ebbfb1f0f6357d 3-10,19-22,28-50,52,54-79,81-89,91-99,101-108
+lib/providers/jikan/jikan.mappers.ts
+  s_205097a93f04df::t_70c0c899f4c09f 1
+  s_205097a93f04df::t_8445fd92bf3a1a 2-87,102-109
+  s_205097a93f04df::t_6b09a6b19bddcd 88-101
+lib/providers/composite.provider.ts
+  s_205097a93f04df::t_6e4556f5bd0c36 4-6,15,17,19,21-26,28-33,36,41-80
+  s_205097a93f04df::t_a45786e67a890a 7-14,34-35,37-40
+  s_205097a93f04df::t_e94830654eba81 3
+  s_205097a93f04df::t_70c0c899f4c09f 1-2,16,18,20,27
+lib/media/provider.ts
+  s_205097a93f04df::t_4ee3352bd6d1c1 19-23
+  s_205097a93f04df::t_4a8a621dfd7f92 16-18
+  s_205097a93f04df::t_502944ca82f95c 24-26
+  s_09bf076871f06e::t_ece2ef486ef1e4 1-15,27-33
+lib/media/index.ts
+  s_205097a93f04df::t_43a6a8028c81cb 12
+  s_205097a93f04df::t_d5d2eb8847482e 1
+  s_205097a93f04df::t_5f5f663add281f 4-10,14
+  s_205097a93f04df::t_775bd68d8ab747 2-3
+  s_205097a93f04df::t_ec0fb214f2f89f 11
+  s_205097a93f04df::t_4254de45991898 13
+  s_205097a93f04df::t_f7bb1626d16fba 15
+lib/http/rate-limiter.ts
+  s_205097a93f04df::t_bf11c1c6d70e23 1-54
+lib/http/errors.ts
+  s_205097a93f04df::t_b807fa9cc2d05a 1-37
+lib/media/models.ts
+  s_09bf076871f06e::t_c765b2f7c1db8f 1-56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "90da3b208826917e53b130e19e5d6f29db080146",
+  "prompts": {},
+  "sessions": {
+    "s_09bf076871f06e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-abcc4fcdbf39566f4",
+        "model": "unknown"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    },
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
