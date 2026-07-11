@@ -1,0 +1,136 @@
+{
+  "nodes": [
+    {
+      "id": "hub",
+      "type": "text",
+      "text": "# Anime Halli\nNext.js anime discovery app\nProvider-agnostic data layer · Neon Glass UI",
+      "x": -140,
+      "y": -70,
+      "width": 280,
+      "height": 140,
+      "color": "5"
+    },
+    {
+      "id": "architecture",
+      "type": "file",
+      "file": "docs/mindmap/Architecture.md",
+      "x": -140,
+      "y": -640,
+      "width": 280,
+      "height": 110
+    },
+    {
+      "id": "data-layer",
+      "type": "file",
+      "file": "docs/mindmap/Data Layer.md",
+      "x": 420,
+      "y": -440,
+      "width": 280,
+      "height": 110
+    },
+    {
+      "id": "ui-components",
+      "type": "file",
+      "file": "docs/mindmap/UI Components.md",
+      "x": 700,
+      "y": -60,
+      "width": 280,
+      "height": 110
+    },
+    {
+      "id": "pages-routes",
+      "type": "file",
+      "file": "docs/mindmap/Pages and Routes.md",
+      "x": 420,
+      "y": 320,
+      "width": 280,
+      "height": 110
+    },
+    {
+      "id": "styling-theme",
+      "type": "file",
+      "file": "docs/mindmap/Styling and Theme.md",
+      "x": -140,
+      "y": 500,
+      "width": 280,
+      "height": 110
+    },
+    {
+      "id": "testing-ci",
+      "type": "file",
+      "file": "docs/mindmap/Testing and CI.md",
+      "x": -700,
+      "y": 320,
+      "width": 280,
+      "height": 110
+    },
+    {
+      "id": "deployment",
+      "type": "file",
+      "file": "docs/mindmap/Deployment.md",
+      "x": -980,
+      "y": -60,
+      "width": 280,
+      "height": 110
+    },
+    {
+      "id": "future-scope",
+      "type": "file",
+      "file": "docs/mindmap/Future Scope.md",
+      "x": -700,
+      "y": -440,
+      "width": 280,
+      "height": 110
+    },
+    {
+      "id": "jikan-provider",
+      "type": "file",
+      "file": "lib/providers/jikan/jikan.provider.ts",
+      "x": 780,
+      "y": -700,
+      "width": 260,
+      "height": 80
+    },
+    {
+      "id": "composite-provider",
+      "type": "file",
+      "file": "lib/providers/composite.provider.ts",
+      "x": 780,
+      "y": -580,
+      "width": 260,
+      "height": 80
+    },
+    {
+      "id": "media-card",
+      "type": "file",
+      "file": "components/media/MediaCard.tsx",
+      "x": 1080,
+      "y": -160,
+      "width": 260,
+      "height": 80
+    },
+    {
+      "id": "dockerfile",
+      "type": "file",
+      "file": "Dockerfile",
+      "x": -1340,
+      "y": -160,
+      "width": 260,
+      "height": 80
+    }
+  ],
+  "edges": [
+    { "id": "e-arch", "fromNode": "hub", "fromSide": "top", "toNode": "architecture", "toSide": "bottom" },
+    { "id": "e-data", "fromNode": "hub", "fromSide": "top", "toNode": "data-layer", "toSide": "left" },
+    { "id": "e-ui", "fromNode": "hub", "fromSide": "right", "toNode": "ui-components", "toSide": "left" },
+    { "id": "e-pages", "fromNode": "hub", "fromSide": "bottom", "toNode": "pages-routes", "toSide": "left" },
+    { "id": "e-style", "fromNode": "hub", "fromSide": "bottom", "toNode": "styling-theme", "toSide": "top" },
+    { "id": "e-test", "fromNode": "hub", "fromSide": "bottom", "toNode": "testing-ci", "toSide": "right" },
+    { "id": "e-deploy", "fromNode": "hub", "fromSide": "left", "toNode": "deployment", "toSide": "right" },
+    { "id": "e-future", "fromNode": "hub", "fromSide": "top", "toNode": "future-scope", "toSide": "right" },
+    { "id": "e-data-jikan", "fromNode": "data-layer", "fromSide": "right", "toNode": "jikan-provider", "toSide": "left" },
+    { "id": "e-data-composite", "fromNode": "data-layer", "fromSide": "right", "toNode": "composite-provider", "toSide": "left" },
+    { "id": "e-ui-card", "fromNode": "ui-components", "fromSide": "right", "toNode": "media-card", "toSide": "left" },
+    { "id": "e-deploy-docker", "fromNode": "deployment", "fromSide": "left", "toNode": "dockerfile", "toSide": "right" }
+  ]
+}
