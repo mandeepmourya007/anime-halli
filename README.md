@@ -44,6 +44,7 @@ Open [http://localhost:3000](http://localhost:3000). No API key is required — 
 ```bash
 npm run build   # production build (type-checked + linted)
 npm run lint
+npm run test    # unit tests (mappers, composite-provider fallback, registry guard)
 ```
 
 ## Provider-agnostic data layer
@@ -61,3 +62,17 @@ The app never calls `fetch` or imports a vendor SDK directly from `app/` or `com
 ## Data & attribution
 
 Anime data, images, and character/voice-actor info are served by [Jikan](https://jikan.moe), an unofficial MyAnimeList API. This project is not affiliated with MyAnimeList.
+
+## Deploying
+
+Deploys cleanly to any Next.js host (e.g. Vercel) with no required secrets — Jikan needs no API key. Optional env vars (see `.env.example`): `NEXT_PUBLIC_SITE_URL` (for correct absolute URLs in metadata/sitemap/robots), `ANILIST_ENABLED`/`ANILIST_API_KEY` if you want to turn on the AniList scaffold.
+
+CI (`.github/workflows/ci.yml`) runs lint, tests, and a production build on every push/PR.
+
+**Known limitations, by design, not yet addressed:**
+- The proactive rate limiter (`lib/http/rate-limiter.ts`) is in-memory and process-local. It works correctly on a single long-running server; on a multi-instance serverless deployment each instance has its own bucket, so it under-throttles relative to Jikan's global limit under heavy concurrent load. Caching (`revalidate`) still protects steady-state traffic regardless.
+- No error-tracking/observability service (e.g. Sentry) is wired in — failures are `console.error`-logged only.
+- No analytics.
+- The sitemap only includes static routes plus the first page of top anime (Jikan doesn't expose a full enumerable ID list without many requests).
+
+None of these block a real deploy — they're the natural next additions once the app is live and you have a sense of actual traffic.
