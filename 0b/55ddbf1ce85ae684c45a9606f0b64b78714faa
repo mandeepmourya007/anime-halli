@@ -1,0 +1,54 @@
+lib/media/anime-merge.ts
+  s_205097a93f04df::t_0d88137b3d9198 35-36
+  s_205097a93f04df::t_0e6b6564c1aa3b 1-2,4-16,19-34,37-48
+  s_205097a93f04df::t_5943b2dedd223d 3
+  s_205097a93f04df::t_117e6f9e3c77a6 17-18
+lib/media/index.ts
+  s_205097a93f04df::t_a6135d88cedb35 10-11,18,21
+  s_205097a93f04df::t_3ece40158118a1 17
+  s_205097a93f04df::t_ff7f2783a1ec2c 22
+  s_205097a93f04df::t_53d0518313129c 16
+  s_205097a93f04df::t_9d5c611d763452 20
+  s_205097a93f04df::t_4d0ab0422a9ab4 15
+lib/media/tabs.ts
+  s_205097a93f04df::t_0dc1edffc539ba 66-70,73-75,81
+  s_205097a93f04df::t_4c06c2c8c94e63 21-27,32-37,58,63
+  s_205097a93f04df::t_94c614a7132ce4 7,13
+  s_205097a93f04df::t_f61d171a2548d3 86-94
+  s_205097a93f04df::t_f4dd1d47ed0a04 8-12,15
+  s_205097a93f04df::t_c51f634e8b5d0a 42-49
+  s_205097a93f04df::t_c1dc35a625f55b 2-4,6,14,28-29,31,38-41,50-51,53-57,59-62,64
+  s_205097a93f04df::t_1840638776b4b6 52
+  s_205097a93f04df::t_f3977b1d1e5708 65,71-72,76-80,82-84
+  s_205097a93f04df::t_60b4ec601f4725 30
+lib/media/tabs.test.ts
+  s_205097a93f04df::t_9bc80eec98d65f 5-6,9,11
+  s_205097a93f04df::t_5ffb4839400783 17
+  s_205097a93f04df::t_ea0d13a2adabb4 1-4,7-8,10,12-16,18-32
+lib/media/availability.ts
+  s_205097a93f04df::t_f91d5a29071131 1-23
+lib/media/category-providers.ts
+  s_205097a93f04df::t_5a239a388b7ccf 1,6-10,12-13,15-20
+  s_205097a93f04df::t_02d4043b64ab26 2-5,11,14,21-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "0b55ddbf1ce85ae684c45a9606f0b64b78714faa",
+  "prompts": {},
+  "humans": {
+    "h_7405c875038418": {
+      "author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  },
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
