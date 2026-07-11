@@ -1,0 +1,61 @@
+app/series/loading.tsx
+  s_205097a93f04df::t_c207f5ab47d9c0 1-21
+app/anime/[id]/page.tsx
+  s_205097a93f04df::t_768fc882140d55 3,5
+  s_205097a93f04df::t_7dff1fbfc85aec 73-74
+  s_205097a93f04df::t_a94b3b6443cd2a 63-64
+  s_205097a93f04df::t_890f376dc0f479 37,40-42,45
+  s_205097a93f04df::t_c483e81c6fd2df 36,44
+app/movies/page.tsx
+  s_205097a93f04df::t_3a26575988f4d7 24-25,28-29
+  s_205097a93f04df::t_a1689b1df3c407 2,13-14,16-19,34-35,37,39,41-44,48-60,63-65,67-71,88-96,98-101
+  s_205097a93f04df::t_9788c502ebc360 26-27,32,47
+  s_205097a93f04df::t_2e75c4ec7e20bc 1
+  s_205097a93f04df::t_02eca6bb3efc45 62
+  s_205097a93f04df::t_798f5b4fe84477 46
+  s_205097a93f04df::t_27a4b4c946b026 3
+  s_205097a93f04df::t_93d6820a2fecb4 15
+  s_205097a93f04df::t_4e548047846678 5
+  s_205097a93f04df::t_6c2f9b0ae5e302 36,38,40
+  s_205097a93f04df::t_85b5e3a16f4195 4,6-12,20-23,30-31,33,45,61,72-87,97
+  s_205097a93f04df::t_6bdcdf3c671f50 66
+app/page.tsx
+  s_205097a93f04df::t_46343d6b1f0a74 18
+  s_205097a93f04df::t_93b3aa380282bc 5
+  s_205097a93f04df::t_56777160bf3527 1
+  s_205097a93f04df::t_7003659b64d972 12-15,17
+  s_205097a93f04df::t_f8e38047fc43f7 22
+  s_205097a93f04df::t_d7e760e728295f 11,28
+  s_205097a93f04df::t_47b990d6b9c18c 2
+app/movies/loading.tsx
+  s_205097a93f04df::t_09e8f487f6c752 1-21
+app/series/page.tsx
+  s_205097a93f04df::t_6f89cdfc22df2e 7
+  s_205097a93f04df::t_e3bd6b4df0c6ec 48
+  s_205097a93f04df::t_b9c042ca4b56d8 2,5-6,8-15,17-29,34-47,49-72
+  s_205097a93f04df::t_ef90ac2a57594b 16,30-33
+  s_205097a93f04df::t_feed29277accc4 3
+  s_205097a93f04df::t_94556bb5d4f2eb 1
+  s_205097a93f04df::t_3856cd598d3d71 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "6f077d7ab8d9758b5de483b294ea1363b2196bf6",
+  "prompts": {},
+  "humans": {
+    "h_7405c875038418": {
+      "author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  },
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
