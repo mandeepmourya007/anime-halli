@@ -16,7 +16,7 @@ const PROVIDER_FACTORIES: Record<string, (config: ProviderConfig) => MediaProvid
  * provider whose methods mostly throw "not implemented" serve real traffic
  * before Jikan ever gets a chance — see docs/plan-anime-discovery-app.md.
  */
-function assertProviderOrdering(configs: ProviderConfig[]): void {
+export function assertProviderOrdering(configs: ProviderConfig[]): void {
   const enabled = configs.filter((c) => c.enabled);
   const completePriorities = enabled.filter((c) => c.status === "complete").map((c) => c.priority);
   if (completePriorities.length === 0) return;
