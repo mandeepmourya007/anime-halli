@@ -1,0 +1,37 @@
+"docs/mindmap/Anime Halli.canvas"
+  s_205097a93f04df::t_9ef78ed921cca1 120-146,160-162
+"docs/mindmap/Pages and Routes.md"
+  s_205097a93f04df::t_5adb283ea574ae 7-15
+"docs/mindmap/Testing and CI.md"
+  s_205097a93f04df::t_7b1cd3c6ce0252 7,10-11
+"docs/mindmap/Data Layer.md"
+  s_205097a93f04df::t_17e562dc60e670 9,11-12
+  s_205097a93f04df::t_3d6612e1493188 28-30,34
+  s_205097a93f04df::t_5f55366973ecdb 16-17
+  s_205097a93f04df::t_5378e567a2ab68 7-8,10,19-23
+docs/mindmap/Architecture.md
+  s_205097a93f04df::t_66550fdcd074e4 9,12-16,20
+"docs/mindmap/Future Scope.md"
+  s_205097a93f04df::t_b3ba05fb8924e1 9-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "93e22a62f08b87c2c486f6157d60bd056cbc588c",
+  "prompts": {},
+  "humans": {
+    "h_7405c875038418": {
+      "author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  },
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
