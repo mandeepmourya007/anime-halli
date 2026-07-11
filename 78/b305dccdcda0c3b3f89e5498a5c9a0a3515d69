@@ -1,0 +1,27 @@
+lib/providers/composite.provider.test.ts
+  s_205097a93f04df::t_7c7ddf0f644dd5 5,16,23
+lib/providers/composite.provider.ts
+  s_205097a93f04df::t_ba281de6823a5c 49,53,57,61,65,69-70,77
+  s_205097a93f04df::t_4bb474825474d1 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "78b305dccdcda0c3b3f89e5498a5c9a0a3515d69",
+  "prompts": {},
+  "humans": {
+    "h_7405c875038418": {
+      "author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  },
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
