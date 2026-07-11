@@ -7,9 +7,16 @@ import { createMediaProvider } from "@/lib/providers/registry";
  *
  * Named generically (not `animeService`) because this facade is meant to grow into a
  * category-aware media service (anime, movies, cartoons, ...) — see Future Scope in
- * docs/plan-anime-discovery-app.md. Today it's backed by the Jikan anime provider.
+ * docs/plan-anime-discovery-app.md. Today it's backed by Jikan (anime) and, if
+ * enabled, TMDB (general movie/TV), merged via `MergingProvider`.
  */
 export const mediaService = createMediaProvider();
 
+export { getAvailabilityForMedia } from "./availability";
+export { tmdbProvider } from "./category-providers";
+export { getAnimeList } from "./anime-merge";
+
 export type { MediaProvider, GenreQuery, ListQuery, SearchQuery } from "./provider";
-export type { AnimeDetail, AnimeStatus, AnimeSummary, AnimeType, Character, Genre, Paged, VoiceActor } from "./models";
+export type { CastMember, Genre, MediaDetail, MediaStatus, MediaSummary, MediaType, Paged } from "./models";
+export type { StreamingSource } from "./availability";
+export type { AnimeTab, MovieRegion, MovieTab, SeriesTab } from "./tabs";
