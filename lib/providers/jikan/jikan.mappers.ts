@@ -36,11 +36,15 @@ function toAnimeStatus(raw: string | null | undefined): AnimeStatus {
   return STATUS_MAP[raw] ?? "Unknown";
 }
 
+function toImageUrl(images: JikanAnime["images"] | undefined): string | null {
+  return images?.jpg?.large_image_url ?? images?.jpg?.image_url ?? null;
+}
+
 export function toAnimeSummary(dto: JikanAnime): AnimeSummary {
   return {
     id: String(dto.mal_id),
     title: dto.title,
-    posterUrl: dto.images?.jpg?.large_image_url ?? dto.images?.jpg?.image_url ?? null,
+    posterUrl: toImageUrl(dto.images),
     score: dto.score ?? null,
     type: toAnimeType(dto.type),
     year: dto.year ?? dto.aired?.prop?.from?.year ?? null,
@@ -51,7 +55,7 @@ export function toAnimeDetail(dto: JikanAnime): AnimeDetail {
   return {
     ...toAnimeSummary(dto),
     synopsis: dto.synopsis ?? null,
-    bannerUrl: dto.images?.jpg?.large_image_url ?? dto.images?.jpg?.image_url ?? null,
+    bannerUrl: toImageUrl(dto.images),
     genres: (dto.genres ?? []).map(toGenre),
     trailerYoutubeId: dto.trailer?.youtube_id ?? null,
     status: toAnimeStatus(dto.status),
