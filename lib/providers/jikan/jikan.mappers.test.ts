@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { dedupeById, toAnimeSummary, toCharacter } from "./jikan.mappers";
+import { dedupeById, toCastMember, toMediaSummary } from "./jikan.mappers";
 import type { JikanAnime, JikanCharacterEntry } from "./jikan.dto";
 
 function makeAnime(overrides: Partial<JikanAnime> = {}): JikanAnime {
@@ -15,13 +15,13 @@ function makeAnime(overrides: Partial<JikanAnime> = {}): JikanAnime {
   };
 }
 
-describe("toAnimeSummary", () => {
-  it("maps core fields and falls back to aired.prop.from.year when year is missing", () => {
-    const summary = toAnimeSummary(
+describe("toMediaSummary", () => {
+  it("maps core fields, prefixes the id, and falls back to aired.prop.from.year when year is missing", () => {
+    const summary = toMediaSummary(
       makeAnime({ year: null, aired: { prop: { from: { year: 1998 } } } }),
     );
     expect(summary).toMatchObject({
-      id: "1",
+      id: "jikan-1",
       title: "Cowboy Bebop",
       posterUrl: "img-large.jpg",
       score: 8.75,
@@ -31,12 +31,12 @@ describe("toAnimeSummary", () => {
   });
 
   it("maps an unrecognized type/status to 'Unknown' instead of throwing", () => {
-    const summary = toAnimeSummary(makeAnime({ type: "SomeFutureType" }));
+    const summary = toMediaSummary(makeAnime({ type: "SomeFutureType" }));
     expect(summary.type).toBe("Unknown");
   });
 
   it("handles a null score without crashing", () => {
-    const summary = toAnimeSummary(makeAnime({ score: null }));
+    const summary = toMediaSummary(makeAnime({ score: null }));
     expect(summary.score).toBeNull();
   });
 });
@@ -57,7 +57,7 @@ describe("dedupeById", () => {
   });
 });
 
-describe("toCharacter", () => {
+describe("toCastMember", () => {
   function makeCharacterEntry(overrides: Partial<JikanCharacterEntry> = {}): JikanCharacterEntry {
     return {
       character: { mal_id: 42, name: "Spike Spiegel" },
@@ -67,8 +67,8 @@ describe("toCharacter", () => {
     };
   }
 
-  it("picks the Japanese voice actor when multiple languages are present", () => {
-    const character = toCharacter(
+  it("prefixes the id and picks the Japanese voice actor as secondaryName", () => {
+    const member = toCastMember(
       makeCharacterEntry({
         voice_actors: [
           { language: "English", person: { mal_id: 1, name: "Steve Blum" } },
@@ -76,16 +76,17 @@ describe("toCharacter", () => {
         ],
       }),
     );
-    expect(character.voiceActor?.name).toBe("Kouichi Yamadera");
-    expect(character.voiceActor?.language).toBe("Japanese");
+    expect(member.id).toBe("jikan-42");
+    expect(member.primaryName).toBe("Spike Spiegel");
+    expect(member.secondaryName).toBe("Kouichi Yamadera");
   });
 
-  it("leaves voiceActor undefined when no Japanese voice actor exists", () => {
-    const character = toCharacter(
+  it("leaves secondaryName null when no Japanese voice actor exists", () => {
+    const member = toCastMember(
       makeCharacterEntry({
         voice_actors: [{ language: "English", person: { mal_id: 1, name: "Steve Blum" } }],
       }),
     );
-    expect(character.voiceActor).toBeUndefined();
+    expect(member.secondaryName).toBeNull();
   });
 });

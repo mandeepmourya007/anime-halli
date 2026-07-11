@@ -1,4 +1,4 @@
-import type { AnimeDetail, AnimeSummary, Character, Genre, Paged } from "@/lib/media/models";
+import type { MediaDetail, MediaSummary, CastMember, Genre, Paged } from "@/lib/media/models";
 import type { MediaProvider, GenreQuery, ListQuery, SearchQuery } from "@/lib/media/provider";
 import type { ProviderConfig } from "@/lib/config/providers.config";
 import { httpFetch } from "@/lib/http/fetcher";
@@ -10,9 +10,10 @@ import type {
 } from "./jikan.dto";
 import {
   dedupeById,
-  toAnimeDetail,
-  toAnimeSummary,
-  toCharacter,
+  fromSourceId,
+  toCastMember,
+  toMediaDetail,
+  toMediaSummary,
   toGenreFromEntry,
   toPaged,
 } from "./jikan.mappers";
@@ -43,53 +44,62 @@ export class JikanProvider implements MediaProvider {
   private async fetchList(
     path: string,
     params: Record<string, string | number | undefined>,
-  ): Promise<Paged<AnimeSummary>> {
+  ): Promise<Paged<MediaSummary>> {
     const url = this.buildUrl(path, params);
     const res = await httpFetch<JikanAnimeListResponse>(url, {
       revalidate: LIST_REVALIDATE_SECONDS,
       provider: this.name,
       rateLimit: JIKAN_RATE_LIMIT,
     });
-    return toPaged(dedupeById(res.data.map(toAnimeSummary)), res.pagination);
+    return toPaged(dedupeById(res.data.map(toMediaSummary)), res.pagination);
   }
 
-  async getTop(q: ListQuery): Promise<Paged<AnimeSummary>> {
+  async getTop(q: ListQuery): Promise<Paged<MediaSummary>> {
     return this.fetchList("/top/anime", { page: q.page ?? 1 });
   }
 
-  async getAiring(q: ListQuery): Promise<Paged<AnimeSummary>> {
+  /** Popularity sort — distinct from getTop's default rank/score sort. Used by
+   * the Anime page's Trending tab (see lib/media/anime-merge.ts), outside the
+   * shared `MediaProvider` interface since "trending" isn't a cross-provider concept. */
+  async getTrending(page: number): Promise<Paged<MediaSummary>> {
+    return this.fetchList("/top/anime", { page, filter: "bypopularity" });
+  }
+
+  async getAiring(q: ListQuery): Promise<Paged<MediaSummary>> {
     return this.fetchList("/top/anime", { page: q.page ?? 1, filter: "airing" });
   }
 
-  async getMovies(q: ListQuery): Promise<Paged<AnimeSummary>> {
+  async getMovies(q: ListQuery): Promise<Paged<MediaSummary>> {
     return this.fetchList("/top/anime", { page: q.page ?? 1, type: "movie" });
   }
 
-  async search(q: SearchQuery): Promise<Paged<AnimeSummary>> {
+  async search(q: SearchQuery): Promise<Paged<MediaSummary>> {
     if (!q.q?.trim()) {
       return { items: [], page: 1, hasNext: false, lastPage: 1 };
     }
     return this.fetchList("/anime", { q: q.q, page: q.page ?? 1 });
   }
 
-  async getById(id: string): Promise<AnimeDetail> {
-    const url = this.buildUrl(`/anime/${id}/full`);
+  async getById(id: string): Promise<MediaDetail> {
+    const rawId = fromSourceId(id);
+    const url = this.buildUrl(`/anime/${rawId}/full`);
     const res = await httpFetch<JikanAnimeFullResponse>(url, {
       revalidate: DETAIL_REVALIDATE_SECONDS,
       provider: this.name,
       rateLimit: JIKAN_RATE_LIMIT,
     });
-    return toAnimeDetail(res.data);
+    return toMediaDetail(res.data);
   }
 
-  async getCharacters(id: string): Promise<Character[]> {
-    const url = this.buildUrl(`/anime/${id}/characters`);
+  async getCast(id: string): Promise<CastMember[]> {
+    const rawId = fromSourceId(id);
+    const url = this.buildUrl(`/anime/${rawId}/characters`);
     const res = await httpFetch<JikanCharactersResponse>(url, {
       revalidate: DETAIL_REVALIDATE_SECONDS,
       provider: this.name,
       rateLimit: JIKAN_RATE_LIMIT,
     });
-    return res.data.map(toCharacter);
+    return res.data.map(toCastMember);
   }
 
   async getGenres(): Promise<Genre[]> {
@@ -102,7 +112,12 @@ export class JikanProvider implements MediaProvider {
     return res.data.map(toGenreFromEntry);
   }
 
-  async getByGenre(q: GenreQuery): Promise<Paged<AnimeSummary>> {
-    return this.fetchList("/anime", { genres: q.genreId, page: q.page ?? 1 });
+  async getByGenre(q: GenreQuery): Promise<Paged<MediaSummary>> {
+    const genres = await this.getGenres();
+    const match = genres.find((g) => g.name.toLowerCase() === q.genreName.toLowerCase());
+    if (!match) {
+      return { items: [], page: 1, hasNext: false, lastPage: 1 };
+    }
+    return this.fetchList("/anime", { genres: match.id, page: q.page ?? 1 });
   }
 }
