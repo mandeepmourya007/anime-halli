@@ -1,0 +1,146 @@
+next.config.ts
+  s_205097a93f04df::t_67f51dc54b9d8c 4-11
+  s_205097a93f04df::t_4923e79ae86848 1-3,12-14
+components/ui/GlassCard.tsx
+  s_205097a93f04df::t_39a7bbf590813f 1-31
+docs/plan-anime-discovery-app.md
+  s_205097a93f04df::t_2c574990f32c20 19,28,32-33,37,62,64,67,69,86,99,101,111-112,117,120,123,130,133
+  s_205097a93f04df::t_c04fe806540869 137-138,140
+  s_205097a93f04df::t_ddcc2f9e592c57 143-151
+  s_205097a93f04df::t_22ada8567ce601 1-18,20-26,29-30,34-36,38-61,63,65-66,68,70-85,87-98,100,103-110,113-116,118-119,121-122,124-129,131-132,134-136,139,141-142,152-170
+  s_205097a93f04df::t_18235211348b46 102
+  s_205097a93f04df::t_d5f339d13ffa41 27,31
+components/layout/Footer.tsx
+  s_205097a93f04df::t_7ab4a8c2d48b04 1-24
+components/search/SearchBar.tsx
+  s_205097a93f04df::t_3fbed955ead724 1-36
+docs/wireframes.md
+  s_205097a93f04df::t_2c574990f32c20 5,7,27,69,119
+  s_205097a93f04df::t_b8dac673c9ab7d 1-4,6,8-26,28-68,70-118,120-125
+public/file.svg
+  s_205097a93f04df::t_4923e79ae86848 1
+components/media/Pagination.tsx
+  s_205097a93f04df::t_687cc61e195dfa 39
+  s_205097a93f04df::t_df2a5b15971c51 21-22,24-25,27,31-33
+  s_205097a93f04df::t_ef84ca479afd47 12,18,20,23,26,28-30,34-35,42-74,88
+  s_205097a93f04df::t_1d3ff0d65fbc4f 9-11
+  s_205097a93f04df::t_94ff1f46f5bdca 13-17
+  s_205097a93f04df::t_13f726a9aa8b50 19
+  s_205097a93f04df::t_ecf0f417d68efa 36-38
+  s_205097a93f04df::t_7aa81f8611c977 40-41
+  s_205097a93f04df::t_677ef76fd92a96 75-77,85-87
+  s_205097a93f04df::t_3d0ba2c39d9e77 1-8,78-84
+public/window.svg
+  s_205097a93f04df::t_4923e79ae86848 1
+components/media/MediaCard.tsx
+  s_205097a93f04df::t_90dabfe1b69cae 2,8
+  s_205097a93f04df::t_bb9cdfe6ae5b9c 6,12-27
+  s_205097a93f04df::t_955a74426ddcc8 1
+  s_205097a93f04df::t_34e629bbc9fac3 3-5
+  s_205097a93f04df::t_31ea439144eb84 7
+  s_205097a93f04df::t_e0d7866bbf159b 9-11
+  s_205097a93f04df::t_e07624d256356e 28-30
+  s_205097a93f04df::t_10a185b4b86204 31-39
+package.json
+  s_205097a93f04df::t_4923e79ae86848 1-11,13-14,17-28
+  s_205097a93f04df::t_24bd8fa34aa38e 12,15-16
+postcss.config.mjs
+  s_205097a93f04df::t_4923e79ae86848 1-7
+components/ui/MediaThumbnail.tsx
+  s_205097a93f04df::t_5c9aef5da012b3 1-45
+public/globe.svg
+  s_205097a93f04df::t_4923e79ae86848 1
+components/media/MediaGrid.tsx
+  s_205097a93f04df::t_3f419b5a86a246 3,7
+  s_205097a93f04df::t_57866390a7ec77 1-2,5,13
+  s_205097a93f04df::t_08e606e5e9557a 4
+  s_205097a93f04df::t_f3354dd4852e34 6
+  s_205097a93f04df::t_58f990461df305 8-12
+  s_205097a93f04df::t_f7182eca84d702 14-16
+  s_205097a93f04df::t_2e27780913432a 17
+components/ui/GradientText.tsx
+  s_205097a93f04df::t_6f237c3a25ed44 1-14
+components/media/CastList.tsx
+  s_205097a93f04df::t_0129723875160a 1,5
+  s_205097a93f04df::t_70206691553e80 3,15-20
+  s_205097a93f04df::t_c6183bf7f4a4f5 2
+  s_205097a93f04df::t_8d325c66907ad9 4
+  s_205097a93f04df::t_dcc731cbecc57a 6-8,12-14
+  s_205097a93f04df::t_a16ba6870e04f2 21-23
+  s_205097a93f04df::t_3c3137903e0982 9-11,24-33
+tsconfig.json
+  s_205097a93f04df::t_4923e79ae86848 1-34
+components/ui/Spinner.tsx
+  s_205097a93f04df::t_f0d1dbbd546c54 1-14
+README.md
+  s_205097a93f04df::t_0eb3c363265885 1,3,5,7-32,35,37-40,42,44-47,49,51,53-57,59,61,63
+  s_205097a93f04df::t_4923e79ae86848 2,4,6,33-34,36,41,43,48,50,52,58,60,62
+components/ui/Badge.tsx
+  s_205097a93f04df::t_c9838182c42f18 1-32
+components/media/HeroBanner.tsx
+  s_205097a93f04df::t_231a92d0b783fc 2
+  s_205097a93f04df::t_92c31edd51ae23 20-29
+  s_205097a93f04df::t_6b760b2e5f370a 5
+  s_205097a93f04df::t_deb876b4e76297 1
+  s_205097a93f04df::t_a2d40516994ea2 3-4
+  s_205097a93f04df::t_1a9e25e53cc34f 6-8,17-19
+  s_205097a93f04df::t_c06f9e9cdb765e 30-32
+  s_205097a93f04df::t_fee3da43182caa 9-16,33-59
+components/ui/Skeleton.tsx
+  s_205097a93f04df::t_3393cb5c0d352d 1-12
+eslint.config.mjs
+  s_205097a93f04df::t_4923e79ae86848 1-18
+components/layout/Container.tsx
+  s_205097a93f04df::t_91789226847955 1-16
+components/ui/EmptyState.tsx
+  s_205097a93f04df::t_9d378d3dccc66d 1-16
+public/vercel.svg
+  s_205097a93f04df::t_4923e79ae86848 1
+components/layout/Navbar.tsx
+  s_205097a93f04df::t_4cf453e46c26ca 1,3-33,37-42
+  s_205097a93f04df::t_785e5f784a2fc8 2
+  s_205097a93f04df::t_140aaa776ca0ad 34-36
+.gitignore
+  s_205097a93f04df::t_4923e79ae86848 1-41
+app/globals.css
+  s_205097a93f04df::t_5f2de5dd5fb012 4-5,11-27,30-31,34,38-180
+  s_205097a93f04df::t_4923e79ae86848 1-3,6-10,28-29,32-33,35-37,181
+public/next.svg
+  s_205097a93f04df::t_4923e79ae86848 1
+lib/utils/format.ts
+  s_205097a93f04df::t_28f20654c6d7c4 1-25
+package-lock.json
+  s_205097a93f04df::t_59e79dbee88575 1-6839
+AGENTS.md
+  s_205097a93f04df::t_8c68b9e007fc03 1-5
+CLAUDE.md
+  s_205097a93f04df::t_3ac60d2f16af74 1
+components/media/CategoryTabs.tsx
+  s_09bf076871f06e::t_44f3c5e4248b3b 1-32
+components/media/TrailerEmbed.tsx
+  s_09bf076871f06e::t_c5a25c9830168c 1-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "a2253043593e4525f731cd7e665d4a80144458d7",
+  "prompts": {},
+  "sessions": {
+    "s_09bf076871f06e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-abcc4fcdbf39566f4",
+        "model": "unknown"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    },
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
