@@ -1,50 +1,31 @@
-import { mediaService } from "@/lib/media";
-import type { AnimeSummary, Paged } from "@/lib/media/models";
-import { VALID_HOME_TABS } from "@/lib/media/tabs";
+import { getAnimeList, type AnimeTab } from "@/lib/media";
+import { ANIME_TABS, VALID_ANIME_TABS, resolveListParams } from "@/lib/media/tabs";
 import MediaGrid from "@/components/media/MediaGrid";
 import CategoryTabs from "@/components/media/CategoryTabs";
-import HeroBanner from "@/components/media/HeroBanner";
+import HeroCarousel from "@/components/media/HeroCarousel";
 import Pagination from "@/components/media/Pagination";
 import Container from "@/components/layout/Container";
 
 type SearchParams = Promise<{ tab?: string; page?: string }>;
 
-async function fetchTab(tab: string, page: number): Promise<Paged<AnimeSummary>> {
-  switch (tab) {
-    case "airing":
-      return mediaService.getAiring({ page });
-    case "movies":
-      return mediaService.getMovies({ page });
-    default:
-      return mediaService.getTop({ page });
-  }
-}
+export default async function AnimePage({ searchParams }: { searchParams: SearchParams }) {
+  const { tab, page } = resolveListParams(await searchParams, VALID_ANIME_TABS) as {
+    tab: AnimeTab;
+    page: number;
+  };
 
-export default async function Home({ searchParams }: { searchParams: SearchParams }) {
-  const { tab: rawTab, page: rawPage } = await searchParams;
-  const tab = rawTab && VALID_HOME_TABS.has(rawTab) ? rawTab : "top";
-  const page = Math.max(1, Number(rawPage) || 1);
-
-  // Only fetch a second time for the hero when the active tab isn't already
-  // "top" — reuse `result` instead of re-requesting the same top-anime list
-  // (Jikan's rate limit is shared across every visitor hitting this page).
-  const needsSeparateHeroFetch = page === 1 && tab !== "top";
-  const [result, heroResult] = await Promise.all([
-    fetchTab(tab, page),
-    needsSeparateHeroFetch ? mediaService.getTop({ page: 1 }) : Promise.resolve(null),
-  ]);
-
-  const hero = tab === "top" ? result.items[0] : heroResult?.items[0];
+  const result = await getAnimeList(tab, page);
+  const heroItems = page === 1 ? result.items : [];
 
   return (
     <Container className="space-y-8 py-8">
-      {hero && page === 1 && <HeroBanner anime={hero} />}
+      <HeroCarousel items={heroItems} />
 
       <div className="flex flex-wrap items-center justify-between gap-4">
         <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">
           Discover <span className="gradient-text">Anime</span>
         </h2>
-        <CategoryTabs activeTab={tab} />
+        <CategoryTabs tabs={ANIME_TABS} activeTab={tab} basePath="/" />
       </div>
 
       <MediaGrid items={result.items} />
