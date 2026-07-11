@@ -1,0 +1,35 @@
+components/media/PosterHero.tsx
+  s_205097a93f04df::t_9e4d24247147cd 40-46
+  s_205097a93f04df::t_4a6b46aa6f2cb1 3
+  s_205097a93f04df::t_362622b9255a02 1-2,4-39,47-52
+components/media/HeroCarousel.tsx
+  s_205097a93f04df::t_373c14c82e156f 1-4,6-8,10-13,27-33,35-52,75,77,79-98
+  s_205097a93f04df::t_79179e783b6e93 78
+  s_205097a93f04df::t_c162802ae4d195 34
+  s_205097a93f04df::t_9b9c43ab1879ce 5
+  s_205097a93f04df::t_8103497cf5b4ed 9,14-26,53-74,76
+components/media/HeroBanner.tsx
+  s_205097a93f04df::t_ca381a3aa3f928 2,8,10
+  s_205097a93f04df::t_ab1597b6e5f2df 6,14-28,33-35,38,49,60-75
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "990dfb951ce0c4f5ad02a9195d16ef9719b94a13",
+  "prompts": {},
+  "humans": {
+    "h_7405c875038418": {
+      "author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  },
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
