@@ -1,0 +1,19 @@
+.github/workflows/ci.yml
+  s_205097a93f04df::t_0b18e14a987b84 1-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "929e30a24b896c01ed88d0b5f975ba8c85faf4c3",
+  "prompts": {},
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
