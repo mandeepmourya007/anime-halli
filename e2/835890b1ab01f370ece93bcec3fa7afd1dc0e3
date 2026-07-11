@@ -1,0 +1,42 @@
+"docs/mindmap/Data Layer.md"
+  s_205097a93f04df::t_95f3e5a43ba60a 1-27
+docs/mindmap/Deployment.md
+  s_205097a93f04df::t_9dc82188f685a0 1-13
+.claude/skills/senior-review/SKILL.md
+  s_205097a93f04df::t_a9e500284332ee 1-70
+"docs/mindmap/Testing and CI.md"
+  s_205097a93f04df::t_6642eb9d09fff2 1-14,19
+  s_205097a93f04df::t_a43f14f64de428 15-18
+"docs/mindmap/Anime Halli.canvas"
+  s_205097a93f04df::t_4551eb9e34902b 1-136
+"docs/mindmap/Future Scope.md"
+  s_205097a93f04df::t_c369232b19010b 1-12
+"docs/mindmap/Anime Halli.md"
+  s_205097a93f04df::t_9c6f72e1a90b11 1-21
+"docs/mindmap/Styling and Theme.md"
+  s_205097a93f04df::t_9f5bffc2a290f3 1-12
+"docs/mindmap/Pages and Routes.md"
+  s_205097a93f04df::t_06db0bd903ee18 1-18
+"docs/mindmap/UI Components.md"
+  s_205097a93f04df::t_89b1b034c70830 1-30
+CLAUDE.md
+  s_205097a93f04df::t_178fc2b0c34049 2-9
+docs/mindmap/Architecture.md
+  s_205097a93f04df::t_999fc37c3f2ee6 1-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "e2835890b1ab01f370ece93bcec3fa7afd1dc0e3",
+  "prompts": {},
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
