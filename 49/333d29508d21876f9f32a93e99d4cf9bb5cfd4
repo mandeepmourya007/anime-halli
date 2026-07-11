@@ -1,0 +1,27 @@
+components/layout/Footer.tsx
+  s_205097a93f04df::t_b102334e1f29f6 17,29
+  s_205097a93f04df::t_b552cac1fa8417 8,10
+  s_205097a93f04df::t_6b86eee7bd1ca2 1,12,20-28,30-35
+  s_205097a93f04df::t_48f08328cf3bb8 4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "49333d29508d21876f9f32a93e99d4cf9bb5cfd4",
+  "prompts": {},
+  "humans": {
+    "h_7405c875038418": {
+      "author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  },
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
