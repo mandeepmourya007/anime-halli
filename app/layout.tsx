@@ -15,10 +15,29 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const SITE_TITLE = "Anime Halli — Discover Anime";
+const SITE_DESCRIPTION =
+  "Browse top, airing, and movie anime with cast/voice-actor details. Powered by a provider-agnostic data layer.";
+
 export const metadata: Metadata = {
-  title: "Anime Halli — Discover Anime",
-  description:
-    "Browse top, airing, and movie anime with cast/voice-actor details. Powered by a provider-agnostic data layer.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: "%s — Anime Halli",
+  },
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    type: "website",
+    siteName: "Anime Halli",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({

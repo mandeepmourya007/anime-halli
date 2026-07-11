@@ -14,15 +14,17 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
   try {
     const anime = await mediaService.getById(id);
+    // Plain string — the root layout's title template appends "— Anime Halli".
     return {
-      title: `${anime.title} — Anime Halli`,
+      title: anime.title,
       description: anime.synopsis ?? `Details, trailer, and cast for ${anime.title}.`,
+      openGraph: { title: anime.title, images: anime.bannerUrl ? [anime.bannerUrl] : undefined },
     };
   } catch (err) {
     if (!(err instanceof NotFoundError)) {
       console.error(`generateMetadata failed for anime ${id}:`, err);
     }
-    return { title: "Anime Halli" };
+    return { title: { absolute: "Anime Halli" } };
   }
 }
 
