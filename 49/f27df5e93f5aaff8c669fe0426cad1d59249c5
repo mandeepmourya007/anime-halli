@@ -1,0 +1,25 @@
+lib/http/fetcher.ts
+  s_e82bc579a1e8d5::t_f89df49466c18c 113-138
+  s_e82bc579a1e8d5::t_64dc9128c50f3f 139
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "49f27df5e93f5aaff8c669fe0426cad1d59249c5",
+  "prompts": {},
+  "humans": {
+    "h_7405c875038418": {
+      "author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  },
+  "sessions": {
+    "s_e82bc579a1e8d5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3deee51e-92b0-4d49-a76c-8a122908e266",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
