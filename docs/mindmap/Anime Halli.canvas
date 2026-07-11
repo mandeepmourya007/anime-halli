@@ -117,6 +117,33 @@
       "y": -160,
       "width": 260,
       "height": 80
+    },
+    {
+      "id": "tmdb-provider",
+      "type": "file",
+      "file": "lib/providers/tmdb/tmdb.provider.ts",
+      "x": 780,
+      "y": -460,
+      "width": 260,
+      "height": 80
+    },
+    {
+      "id": "merging-provider",
+      "type": "file",
+      "file": "lib/providers/merging.provider.ts",
+      "x": 780,
+      "y": -340,
+      "width": 260,
+      "height": 80
+    },
+    {
+      "id": "watchmode-provider",
+      "type": "file",
+      "file": "lib/providers/watchmode/watchmode.provider.ts",
+      "x": 780,
+      "y": -220,
+      "width": 260,
+      "height": 80
     }
   ],
   "edges": [
@@ -130,6 +157,9 @@
     { "id": "e-future", "fromNode": "hub", "fromSide": "top", "toNode": "future-scope", "toSide": "right" },
     { "id": "e-data-jikan", "fromNode": "data-layer", "fromSide": "right", "toNode": "jikan-provider", "toSide": "left" },
     { "id": "e-data-composite", "fromNode": "data-layer", "fromSide": "right", "toNode": "composite-provider", "toSide": "left" },
+    { "id": "e-data-tmdb", "fromNode": "data-layer", "fromSide": "right", "toNode": "tmdb-provider", "toSide": "left" },
+    { "id": "e-data-merging", "fromNode": "data-layer", "fromSide": "right", "toNode": "merging-provider", "toSide": "left" },
+    { "id": "e-data-watchmode", "fromNode": "data-layer", "fromSide": "right", "toNode": "watchmode-provider", "toSide": "left" },
     { "id": "e-ui-card", "fromNode": "ui-components", "fromSide": "right", "toNode": "media-card", "toSide": "left" },
     { "id": "e-deploy-docker", "fromNode": "deployment", "fromSide": "left", "toNode": "dockerfile", "toSide": "right" }
   ]
