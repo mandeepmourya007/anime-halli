@@ -110,7 +110,33 @@ export async function httpFetch<T>(url: string, opts: HttpFetchOptions = {}): Pr
         throw err;
       }
 
-      // Network error / abort — retry if attempts remain.
+      // Network error / abort — surface the underlying cause explicitly. undici's
+      // top-level Error is always just "fetch failed"; the actual reason (ENOTFOUND,
+      // ECONNREFUSED, ECONNRESET, a TLS failure, or our own abort on timeout) lives
+      // one level down in `.cause`, which default error logging can bury or omit.
+      const cause = err instanceof Error ? err.cause : undefined;
+      const causeInfo =
+        cause instanceof Error
+          ? {
+              name: cause.name,
+              message: cause.message,
+              code: (cause as NodeJS.ErrnoException).code,
+              errno: (cause as NodeJS.ErrnoException).errno,
+              address: (cause as { address?: string }).address,
+              port: (cause as { port?: number }).port,
+            }
+          : cause;
+
+      console.error(
+        `[httpFetch] attempt ${attempt + 1}/${retries + 1} failed for ${url}`,
+        {
+          provider,
+          aborted: controller.signal.aborted,
+          message: err instanceof Error ? err.message : String(err),
+          cause: causeInfo,
+        },
+      );
+
       if (attempt < retries) {
         await sleep(backoffMs(attempt));
         continue;
