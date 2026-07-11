@@ -1,0 +1,39 @@
+lib/providers/tmdb/tmdb.provider.ts
+  s_205097a93f04df::t_a0ba6a6c2aa5b3 107-108,110-135
+  s_205097a93f04df::t_6e4ec499375eb3 291,293-318
+  s_205097a93f04df::t_73787b56651952 6
+  s_205097a93f04df::t_7c19bc722bed23 191-193,202-235,271-272,274-281,283-290,292,319-357,359-365
+  s_205097a93f04df::t_4b9a2bd9bcdefd 194,199-201,236-237,239,247,249-250,273
+  s_205097a93f04df::t_0301f2b2acec2e 1-5,7-90,154-190,195-198,238,240-246,248,251-270,282,358,366-367
+  s_205097a93f04df::t_2646c9902335e1 91-106,109,136-153
+lib/providers/tmdb/tmdb.mappers.ts
+  s_205097a93f04df::t_d3b3cd9bf79163 132
+  s_205097a93f04df::t_4f38354c160213 77-79,91
+  s_205097a93f04df::t_70d7288e528d06 117,128
+  s_205097a93f04df::t_1cc03f6a880bb1 138-141,144
+  s_205097a93f04df::t_1046bd3bbadafb 121
+  s_205097a93f04df::t_c99bef5657f48c 1-76,80-90,92-116,118-120,122-127,129-131,133-137,142-143,145-149
+lib/providers/tmdb/tmdb.dto.ts
+  s_205097a93f04df::t_743fcc956c2f55 1-77
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "2ad80169be3af133874797e3b69a1012090569ce",
+  "prompts": {},
+  "humans": {
+    "h_7405c875038418": {
+      "author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  },
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
