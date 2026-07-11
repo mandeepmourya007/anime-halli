@@ -1,0 +1,27 @@
+lib/utils/fuzzy-match.test.ts
+  s_205097a93f04df::t_b360a9f1603b0b 1-60
+lib/utils/fuzzy-match.ts
+  s_205097a93f04df::t_3b14d7adeaf541 18-19
+  s_205097a93f04df::t_5f07884d66e985 1-17,20-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "0fcf4689b961d45e9ad9123e36d92452ec8fcb04",
+  "prompts": {},
+  "humans": {
+    "h_7405c875038418": {
+      "author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  },
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
