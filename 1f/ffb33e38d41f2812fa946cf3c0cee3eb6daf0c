@@ -1,0 +1,19 @@
+app/error.tsx
+  s_205097a93f04df::t_8edf0e7030bcd5 1-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "1fffb33e38d41f2812fa946cf3c0cee3eb6daf0c",
+  "prompts": {},
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
