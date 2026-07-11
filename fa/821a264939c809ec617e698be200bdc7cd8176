@@ -1,0 +1,25 @@
+lib/providers/anilist/anilist.provider.ts
+  s_205097a93f04df::t_e1d5ce62172070 54
+  s_205097a93f04df::t_c3025c9c0f5a52 1,13-14,49,51,69,97,101,105,109,113-114,121
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "fa821a264939c809ec617e698be200bdc7cd8176",
+  "prompts": {},
+  "humans": {
+    "h_7405c875038418": {
+      "author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  },
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
