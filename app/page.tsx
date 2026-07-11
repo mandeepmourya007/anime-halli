@@ -1,5 +1,6 @@
 import { mediaService } from "@/lib/media";
 import type { AnimeSummary, Paged } from "@/lib/media/models";
+import { VALID_HOME_TABS } from "@/lib/media/tabs";
 import MediaGrid from "@/components/media/MediaGrid";
 import CategoryTabs from "@/components/media/CategoryTabs";
 import HeroBanner from "@/components/media/HeroBanner";
@@ -7,8 +8,6 @@ import Pagination from "@/components/media/Pagination";
 import Container from "@/components/layout/Container";
 
 type SearchParams = Promise<{ tab?: string; page?: string }>;
-
-const VALID_TABS = new Set(["top", "airing", "movies"]);
 
 async function fetchTab(tab: string, page: number): Promise<Paged<AnimeSummary>> {
   switch (tab) {
@@ -23,15 +22,19 @@ async function fetchTab(tab: string, page: number): Promise<Paged<AnimeSummary>>
 
 export default async function Home({ searchParams }: { searchParams: SearchParams }) {
   const { tab: rawTab, page: rawPage } = await searchParams;
-  const tab = rawTab && VALID_TABS.has(rawTab) ? rawTab : "top";
+  const tab = rawTab && VALID_HOME_TABS.has(rawTab) ? rawTab : "top";
   const page = Math.max(1, Number(rawPage) || 1);
 
+  // Only fetch a second time for the hero when the active tab isn't already
+  // "top" — reuse `result` instead of re-requesting the same top-anime list
+  // (Jikan's rate limit is shared across every visitor hitting this page).
+  const needsSeparateHeroFetch = page === 1 && tab !== "top";
   const [result, heroResult] = await Promise.all([
     fetchTab(tab, page),
-    page === 1 ? mediaService.getTop({ page: 1 }) : Promise.resolve(null),
+    needsSeparateHeroFetch ? mediaService.getTop({ page: 1 }) : Promise.resolve(null),
   ]);
 
-  const hero = heroResult?.items[0];
+  const hero = tab === "top" ? result.items[0] : heroResult?.items[0];
 
   return (
     <Container className="space-y-8 py-8">
