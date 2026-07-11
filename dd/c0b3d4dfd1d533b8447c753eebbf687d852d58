@@ -1,0 +1,21 @@
+app/page.tsx
+  s_205097a93f04df::t_4cb82da39485c2 3
+  s_205097a93f04df::t_053b2db3683281 28-31,34,37
+  s_205097a93f04df::t_df59c16ea2243b 25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "ddc0b3d4dfd1d533b8447c753eebbf687d852d58",
+  "prompts": {},
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
