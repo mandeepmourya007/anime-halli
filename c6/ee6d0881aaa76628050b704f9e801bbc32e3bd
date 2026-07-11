@@ -1,0 +1,23 @@
+docs/mindmap/Deployment.md
+  s_e82bc579a1e8d5::t_ecd59426bdca31 10
+app/api/health/route.ts
+  s_e82bc579a1e8d5::t_d86c716f439fa5 1-3
+instrumentation.ts
+  s_e82bc579a1e8d5::t_fa0b2a3687fd25 1-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "c6ee6d0881aaa76628050b704f9e801bbc32e3bd",
+  "prompts": {},
+  "sessions": {
+    "s_e82bc579a1e8d5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3deee51e-92b0-4d49-a76c-8a122908e266",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeepmourya007 <mandeepmourya007@gmail.com>"
+    }
+  }
+}
