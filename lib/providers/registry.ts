@@ -1,11 +1,14 @@
 import type { MediaProvider } from "@/lib/media/provider";
-import { providersConfig, type ProviderConfig } from "@/lib/config/providers.config";
+import { MEDIA_COMPOSITION_STRATEGY, providersConfig, type ProviderConfig } from "@/lib/config/providers.config";
 import { AniListProvider } from "./anilist/anilist.provider";
 import { CompositeProvider } from "./composite.provider";
 import { JikanProvider } from "./jikan/jikan.provider";
+import { MergingProvider } from "./merging.provider";
+import { TmdbProvider } from "./tmdb/tmdb.provider";
 
 /** Factory: maps a provider id to its concrete adapter constructor. */
 const PROVIDER_FACTORIES: Record<string, (config: ProviderConfig) => MediaProvider> = {
+  tmdb: (config) => new TmdbProvider(config),
   jikan: (config) => new JikanProvider(config),
   anilist: (config) => new AniListProvider(config),
 };
@@ -50,7 +53,8 @@ function buildEnabledProviders(): MediaProvider[] {
 
 /**
  * Builds the active provider(s) from config. A single enabled provider is returned
- * as-is; multiple enabled providers are wrapped in a `CompositeProvider` fallback chain.
+ * as-is; multiple enabled providers are composed per `MEDIA_COMPOSITION_STRATEGY` —
+ * "merge" (fan out + dedupe, default) or "fallback" (priority-ordered chain).
  */
 export function createMediaProvider(): MediaProvider {
   const providers = buildEnabledProviders();
@@ -63,5 +67,7 @@ export function createMediaProvider(): MediaProvider {
     return providers[0];
   }
 
-  return new CompositeProvider(providers);
+  return MEDIA_COMPOSITION_STRATEGY === "fallback"
+    ? new CompositeProvider(providers)
+    : new MergingProvider(providers);
 }
