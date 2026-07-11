@@ -1,0 +1,29 @@
+lib/providers/merging.provider.ts
+  s_205097a93f04df::t_e4318f03a9786a 31,35
+  s_205097a93f04df::t_d8ea52ff954b1f 69-72,76
+  s_205097a93f04df::t_fe74d57c37b09e 108-148
+  s_205097a93f04df::t_43a669943d6b99 1-30,32-34,36-68,73-75,77-107
+lib/providers/merging.provider.test.ts
+  s_205097a93f04df::t_25e2903fa3b4f9 1-147
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "7c21dc981bb071e7d784c5c7349bb31bfcc55a51",
+  "prompts": {},
+  "humans": {
+    "h_7405c875038418": {
+      "author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  },
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
