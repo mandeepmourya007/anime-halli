@@ -1,0 +1,25 @@
+app/anime/[id]/page.tsx
+  s_205097a93f04df::t_0e68d972a4c4c1 17,19,21,27
+app/layout.tsx
+  s_205097a93f04df::t_b1c90db9d1e7f5 18-22,24-40
+app/sitemap.ts
+  s_205097a93f04df::t_d905b497370263 1-28
+app/robots.ts
+  s_205097a93f04df::t_002e4832b8d3c6 1-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "a8855c0473ca3fc7c2ef3d9cf466c1edcd726445",
+  "prompts": {},
+  "sessions": {
+    "s_205097a93f04df": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6be654b1-3c77-42fd-8efc-1cea9de2fd6f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeep kumar <mandeep.kumar@dialpad.com>"
+    }
+  }
+}
