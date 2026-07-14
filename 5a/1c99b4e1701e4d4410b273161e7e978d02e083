@@ -1,0 +1,70 @@
+lib/providers/tmdb/tmdb.provider.ts
+  s_76fb4b707d8bde::t_ef06a8fc9bdbf5 222-225
+  s_76fb4b707d8bde::t_f842153d6c0327 194-221,226-228
+  s_76fb4b707d8bde::t_b3dbb738033a93 1,13,20,27
+components/media/SeasonEpisodes.tsx
+  s_76fb4b707d8bde::t_46d5268ef41f48 1-23
+components/media/EpisodeList.tsx
+  s_76fb4b707d8bde::t_437325bf37507b 1-43
+lib/providers/tmdb/tmdb.dto.ts
+  s_76fb4b707d8bde::t_f7b19c038aa501 38-39,43-67
+  s_76fb4b707d8bde::t_6863c4243b2fe8 68
+lib/providers/jikan/jikan.provider.ts
+  s_76fb4b707d8bde::t_72c8b9c44725e4 1,9,16
+  s_76fb4b707d8bde::t_613f3306084444 107-120
+lib/providers/tmdb/tmdb.mappers.ts
+  s_76fb4b707d8bde::t_c4ee2a0438aca6 1,4,8
+  s_76fb4b707d8bde::t_7f1c764251436b 152-175
+"docs/mindmap/UI Components.md"
+  s_76fb4b707d8bde::t_587e51acba1501 24-26
+  s_76fb4b707d8bde::t_75ea3aaad16c4d 32
+app/anime/[id]/loading.tsx
+  s_76fb4b707d8bde::t_cfa2fd7ae9817e 15-22
+  s_76fb4b707d8bde::t_39b296c561779a 14
+app/anime/[id]/page.tsx
+  s_76fb4b707d8bde::t_e886405c4a9902 34-40,42-43,48,51-54,58
+  s_76fb4b707d8bde::t_e6819bec2fd1e4 78-79
+  s_76fb4b707d8bde::t_7c388bb1e394c3 3,8,13
+"docs/mindmap/Pages and Routes.md"
+  s_76fb4b707d8bde::t_3186f50d8a6b20 13
+lib/media/episodes.ts
+  s_76fb4b707d8bde::t_c53db515d838c9 1-98
+lib/media/models.ts
+  s_76fb4b707d8bde::t_e42eb60e94d61b 79-107
+lib/media/index.ts
+  s_76fb4b707d8bde::t_8e231142b12bfd 18,21,24
+lib/providers/jikan/jikan.mappers.ts
+  s_76fb4b707d8bde::t_483f252f81ede6 1,5
+  s_76fb4b707d8bde::t_bcb8e8e9baaac9 125-137
+"docs/mindmap/Data Layer.md"
+  s_76fb4b707d8bde::t_cb64c11894f360 18
+  s_76fb4b707d8bde::t_59d32843b75cb1 11
+  s_76fb4b707d8bde::t_e2f2e48d5b508d 17
+lib/providers/jikan/jikan.dto.ts
+  s_76fb4b707d8bde::t_f8bb6a7fd79b2a 103-114
+components/media/SeasonSelect.tsx
+  s_76fb4b707d8bde::t_7cc6f30e4e0737 1-31
+lib/utils/format.ts
+  s_76fb4b707d8bde::t_234f8a5c15a689 26-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "5a1c99b4e1701e4d4410b273161e7e978d02e083",
+  "prompts": {},
+  "humans": {
+    "h_b3232c20134322": {
+      "author": "mandeepmourya007 <mandeepmourya007@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_76fb4b707d8bde": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01878912-9867-4a95-8751-5b0344932d8d",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeepmourya007 <mandeepmourya007@gmail.com>"
+    }
+  }
+}
