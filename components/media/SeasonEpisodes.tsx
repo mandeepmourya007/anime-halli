@@ -14,7 +14,7 @@ export default function SeasonEpisodes({ data }: { data: SeasonEpisodesData }) {
             {seasons.length} {seasons.length === 1 ? "season" : "seasons"}
           </p>
         </div>
-        {seasons.length > 1 && <SeasonSelect seasons={seasons} selected={selectedSeason} />}
+        <SeasonSelect seasons={seasons} selected={selectedSeason} />
       </div>
 
       <EpisodeList episodes={episodes} />
