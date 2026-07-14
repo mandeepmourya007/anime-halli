@@ -1,0 +1,26 @@
+components/media/CastList.tsx
+  s_76fb4b707d8bde::t_b9bb4935fddc04 15-16
+  s_76fb4b707d8bde::t_b2a50ce4cc2d01 19-30,32-34
+  s_76fb4b707d8bde::t_304ee64584ce03 11-14,17-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "5f2100cbb4538d5024669173535dfea20dc474fb",
+  "prompts": {},
+  "humans": {
+    "h_b3232c20134322": {
+      "author": "mandeepmourya007 <mandeepmourya007@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_76fb4b707d8bde": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01878912-9867-4a95-8751-5b0344932d8d",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeepmourya007 <mandeepmourya007@gmail.com>"
+    }
+  }
+}
