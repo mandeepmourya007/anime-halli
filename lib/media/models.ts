@@ -76,3 +76,32 @@ export interface Paged<T> {
   hasNext: boolean;
   lastPage: number;
 }
+
+/**
+ * A season within a show — currently TMDB-only (Jikan has no season concept),
+ * see `lib/media/episodes.ts`. Deliberately not on `MediaDetail`/`MediaProvider`
+ * since it's fetched separately (per-season episode lists would be far too
+ * heavy to include in every detail response).
+ */
+export interface Season {
+  seasonNumber: number;
+  name: string;
+  episodeCount: number;
+  year: number | null;
+  posterUrl: string | null;
+}
+
+/**
+ * A single episode within a season. `thumbnailUrl`/`runtimeMinutes` are null
+ * for the Jikan fallback path (no TMDB match) — Jikan has no still images or
+ * per-episode runtime, only a title and air date.
+ */
+export interface Episode {
+  id: string;
+  episodeNumber: number;
+  name: string;
+  thumbnailUrl: string | null;
+  airDate: string | null;
+  runtimeMinutes: number | null;
+  overview: string | null;
+}

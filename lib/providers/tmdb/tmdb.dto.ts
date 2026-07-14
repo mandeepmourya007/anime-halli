@@ -35,7 +35,35 @@ export interface TmdbTv {
   genre_ids?: number[];
   genres?: TmdbGenreRef[];
   number_of_episodes?: number | null;
+  number_of_seasons?: number | null;
+  seasons?: TmdbSeasonSummary[];
   status?: string | null;
+}
+
+/** A season entry embedded in `/tv/{id}` detail — summary only, no episode list. */
+export interface TmdbSeasonSummary {
+  season_number: number;
+  name: string;
+  episode_count: number;
+  air_date: string | null;
+  poster_path: string | null;
+}
+
+export interface TmdbEpisode {
+  id: number;
+  episode_number: number;
+  name: string;
+  still_path: string | null;
+  air_date: string | null;
+  runtime: number | null;
+  overview: string | null;
+}
+
+/** `/tv/{id}/season/{n}` response — the season summary fields plus the full episode list. */
+export interface TmdbSeasonDetail {
+  season_number: number;
+  name: string;
+  episodes: TmdbEpisode[];
 }
 
 /** `/search/multi` mixes movies, TV, and people in one list, tagged by `media_type`. */

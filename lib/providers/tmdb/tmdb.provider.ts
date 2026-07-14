@@ -1,4 +1,4 @@
-import type { MediaDetail, MediaSummary, CastMember, Genre, Paged } from "@/lib/media/models";
+import type { Episode, MediaDetail, MediaSummary, CastMember, Genre, Paged, Season } from "@/lib/media/models";
 import type { MediaProvider, GenreQuery, ListQuery, SearchQuery } from "@/lib/media/provider";
 import type { ProviderConfig } from "@/lib/config/providers.config";
 import { httpFetch } from "@/lib/http/fetcher";
@@ -10,18 +10,21 @@ import type {
   TmdbMovie,
   TmdbMultiSearchItem,
   TmdbPagedResponse,
+  TmdbSeasonDetail,
   TmdbTv,
   TmdbVideosResponse,
 } from "./tmdb.dto";
 import {
   fromSourceId,
   toCastMember,
+  toEpisode,
   toGenre,
   toMediaDetailFromMovie,
   toMediaDetailFromTv,
   toMediaSummaryFromMovie,
   toMediaSummaryFromMulti,
   toMediaSummaryFromTv,
+  toSeason,
 } from "./tmdb.mappers";
 
 const LIST_REVALIDATE_SECONDS = 60 * 30; // 30 minutes.
@@ -186,6 +189,41 @@ export class TmdbProvider implements MediaProvider {
     const path = kind === "movie" ? `/movie/${rawId}/credits` : `/tv/${rawId}/credits`;
     const res = await this.fetchJson<TmdbCreditsResponse>(path, {}, DETAIL_REVALIDATE_SECONDS);
     return res.cast.map(toCastMember);
+  }
+
+  /**
+   * Seasons/episodes — TMDB-only concepts (Jikan has neither), so outside the
+   * shared `MediaProvider` interface. `rawId` is the numeric TMDB tv id (no
+   * `tmdb-tv-` prefix) — see `lib/media/episodes.ts`, the only caller.
+   */
+
+  /** Filters out season 0 ("Specials") and any season with no aired episodes yet. */
+  async getTvSeasons(rawId: string): Promise<Season[]> {
+    const tv = await this.fetchJson<TmdbTv>(`/tv/${rawId}`, {}, DETAIL_REVALIDATE_SECONDS);
+    return (tv.seasons ?? [])
+      .filter((s) => s.season_number > 0 && s.episode_count > 0)
+      .map(toSeason);
+  }
+
+  async getTvSeasonEpisodes(rawId: string, seasonNumber: number): Promise<Episode[]> {
+    const season = await this.fetchJson<TmdbSeasonDetail>(
+      `/tv/${rawId}/season/${seasonNumber}`,
+      {},
+      DETAIL_REVALIDATE_SECONDS,
+    );
+    return (season.episodes ?? []).map(toEpisode);
+  }
+
+  /** Best-effort anime-title -> TMDB tv id lookup, used to source episode
+   * thumbnails/durations for Jikan-only anime (Jikan has neither). Returns
+   * null on no confident match rather than guessing. */
+  async searchTvId(title: string, year: number | null): Promise<string | null> {
+    const res = await this.fetchJson<TmdbPagedResponse<TmdbTv>>("/search/tv", { query: title });
+    const match = res.results.find((tv) => {
+      const tvYear = tv.first_air_date ? Number(tv.first_air_date.slice(0, 4)) || null : null;
+      return isSameTitle(tv.name, title, tvYear, year);
+    });
+    return match ? String(match.id) : null;
   }
 
   /** Shared by getGenres/getByGenre/getAnime* — TMDB has separate genre

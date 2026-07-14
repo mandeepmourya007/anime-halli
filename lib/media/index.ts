@@ -15,8 +15,10 @@ export const mediaService = createMediaProvider();
 export { getAvailabilityForMedia } from "./availability";
 export { tmdbProvider } from "./category-providers";
 export { getAnimeList } from "./anime-merge";
+export { getSeasonEpisodes } from "./episodes";
 
 export type { MediaProvider, GenreQuery, ListQuery, SearchQuery } from "./provider";
-export type { CastMember, Genre, MediaDetail, MediaStatus, MediaSummary, MediaType, Paged } from "./models";
+export type { CastMember, Episode, Genre, MediaDetail, MediaStatus, MediaSummary, MediaType, Paged, Season } from "./models";
 export type { StreamingSource } from "./availability";
 export type { AnimeTab, MovieRegion, MovieTab, SeriesTab } from "./tabs";
+export type { SeasonEpisodesData } from "./episodes";

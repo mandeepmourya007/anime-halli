@@ -1,4 +1,4 @@
-import type { MediaDetail, MediaSummary, CastMember, Genre, Paged } from "@/lib/media/models";
+import type { Episode, MediaDetail, MediaSummary, CastMember, Genre, Paged } from "@/lib/media/models";
 import type { MediaProvider, GenreQuery, ListQuery, SearchQuery } from "@/lib/media/provider";
 import type { ProviderConfig } from "@/lib/config/providers.config";
 import { httpFetch } from "@/lib/http/fetcher";
@@ -6,12 +6,14 @@ import type {
   JikanAnimeFullResponse,
   JikanAnimeListResponse,
   JikanCharactersResponse,
+  JikanEpisodesResponse,
   JikanGenresResponse,
 } from "./jikan.dto";
 import {
   dedupeById,
   fromSourceId,
   toCastMember,
+  toEpisode,
   toMediaDetail,
   toMediaSummary,
   toGenreFromEntry,
@@ -100,6 +102,20 @@ export class JikanProvider implements MediaProvider {
       rateLimit: JIKAN_RATE_LIMIT,
     });
     return res.data.map(toCastMember);
+  }
+
+  /** Fallback episode source for anime with no matching TMDB tv entry — see
+   * `lib/media/episodes.ts`. Title + air date only; no thumbnails or runtime.
+   * First page (100 episodes) covers all but a handful of very long-running
+   * shows, which is an acceptable gap for a fallback path. */
+  async getEpisodes(rawId: string): Promise<Episode[]> {
+    const url = this.buildUrl(`/anime/${rawId}/episodes`);
+    const res = await httpFetch<JikanEpisodesResponse>(url, {
+      revalidate: DETAIL_REVALIDATE_SECONDS,
+      provider: this.name,
+      rateLimit: JIKAN_RATE_LIMIT,
+    });
+    return res.data.map(toEpisode);
   }
 
   async getGenres(): Promise<Genre[]> {

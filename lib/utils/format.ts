@@ -23,3 +23,17 @@ export function formatScore(score: number | null | undefined): string {
 export function yearFrom(year: number | null | undefined): string {
   return year ? String(year) : "TBA";
 }
+
+/** Format an ISO date string (e.g. episode air date) for display, or null when absent/invalid. */
+export function formatAirDate(isoDate: string | null | undefined): string | null {
+  if (!isoDate) return null;
+  const date = new Date(isoDate);
+  if (Number.isNaN(date.getTime())) return null;
+  return date.toLocaleDateString("en-US", { day: "numeric", month: "short", year: "numeric" });
+}
+
+/** Format a runtime in minutes for display, or null when absent. */
+export function formatRuntime(minutes: number | null | undefined): string | null {
+  if (!minutes) return null;
+  return `${minutes} min`;
+}

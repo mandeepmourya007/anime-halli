@@ -100,3 +100,15 @@ export interface JikanGenreEntry {
 export interface JikanGenresResponse {
   data: JikanGenreEntry[];
 }
+
+/** Jikan has no still images or per-episode runtime — only title + air date. */
+export interface JikanEpisode {
+  mal_id: number;
+  title: string;
+  aired: string | null;
+}
+
+export interface JikanEpisodesResponse {
+  data: JikanEpisode[];
+  pagination: JikanPagination;
+}

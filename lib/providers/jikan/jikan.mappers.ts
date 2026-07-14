@@ -1,7 +1,8 @@
-import type { MediaDetail, MediaStatus, MediaSummary, MediaType, CastMember, Genre, Paged } from "@/lib/media/models";
+import type { Episode, MediaDetail, MediaStatus, MediaSummary, MediaType, CastMember, Genre, Paged } from "@/lib/media/models";
 import type {
   JikanAnime,
   JikanCharacterEntry,
+  JikanEpisode,
   JikanGenreEntry,
   JikanPagination,
 } from "./jikan.dto";
@@ -119,6 +120,19 @@ export function dedupeById<T extends { id: string }>(items: T[]): T[] {
     seen.add(item.id);
     return true;
   });
+}
+
+/** No still image or runtime on Jikan — those fields stay null (see `Episode`). */
+export function toEpisode(dto: JikanEpisode): Episode {
+  return {
+    id: toSourceId(dto.mal_id),
+    episodeNumber: dto.mal_id,
+    name: dto.title,
+    thumbnailUrl: null,
+    airDate: dto.aired,
+    runtimeMinutes: null,
+    overview: null,
+  };
 }
 
 export function toPaged<T>(items: T[], pagination: JikanPagination): Paged<T> {

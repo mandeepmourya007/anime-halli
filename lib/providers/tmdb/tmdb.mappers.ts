@@ -1,9 +1,11 @@
-import type { MediaDetail, MediaStatus, MediaSummary, CastMember, Genre } from "@/lib/media/models";
+import type { MediaDetail, MediaStatus, MediaSummary, CastMember, Episode, Genre, Season } from "@/lib/media/models";
 import type {
   TmdbCastMember,
+  TmdbEpisode,
   TmdbGenreRef,
   TmdbMovie,
   TmdbMultiSearchItem,
+  TmdbSeasonSummary,
   TmdbTv,
   TmdbVideo,
 } from "./tmdb.dto";
@@ -145,5 +147,29 @@ export function toCastMember(dto: TmdbCastMember): CastMember {
     primaryName: dto.name,
     secondaryName: dto.character || null,
     imageUrl: imageUrl(dto.profile_path, "w500"),
+  };
+}
+
+export function toSeason(dto: TmdbSeasonSummary): Season {
+  return {
+    seasonNumber: dto.season_number,
+    name: dto.name,
+    episodeCount: dto.episode_count,
+    year: yearFromDate(dto.air_date),
+    posterUrl: imageUrl(dto.poster_path, "w500"),
+  };
+}
+
+export function toEpisode(dto: TmdbEpisode): Episode {
+  return {
+    id: `${PREFIX}episode-${dto.id}`,
+    episodeNumber: dto.episode_number,
+    name: dto.name,
+    // `still_path` is a landscape frame from the episode, not a poster — "w500"
+    // is still the right size bucket (TMDB doesn't offer a dedicated still size tier).
+    thumbnailUrl: imageUrl(dto.still_path, "w500"),
+    airDate: dto.air_date,
+    runtimeMinutes: dto.runtime,
+    overview: dto.overview,
   };
 }

@@ -21,11 +21,14 @@
 - `HeroBanner` — featured/detail-page header.
 - `CastList` — character + Japanese voice-actor grid.
 - `TrailerEmbed` — YouTube iframe wrapper.
+- `SeasonEpisodes` — detail-page "Episodes" section: season count, `SeasonSelect`, `EpisodeList`. Renders nothing when [[Data Layer|`getSeasonEpisodes`]] returns `null` (movies).
+- `SeasonSelect` — **the first client component in `components/media/`** (`"use client"`): a native `<select>` that pushes `?season=N`, same URL-param convention as `CategoryTabs`/`Pagination`. Only rendered when there's more than one season.
+- `EpisodeList` — mobile-first (1 col → 2 col at `md:`) episode rows: thumbnail, name, air date, runtime — same `GlassCard` row layout as `CastList`.
 - `CategoryTabs`, `Pagination` — tab switcher and first-3/last-3-page pagination.
 - `MediaLink` — every link into the detail route (`/anime/[id]`) goes through this; bakes in `prefetch={false}` since that route's data fetch hits rate-limited external APIs (TMDB, Watchmode) and Next's default viewport prefetching of a whole grid queues up badly on a real network.
 
 ## Search
 
-- [`components/search/SearchBar.tsx`](../../components/search/SearchBar.tsx) — the one client component in the app (`"use client"`, needs `useSearchParams`), wrapped in `<Suspense>` in `Navbar`.
+- [`components/search/SearchBar.tsx`](../../components/search/SearchBar.tsx) — a client component (`"use client"`, needs `useSearchParams`), wrapped in `<Suspense>` in `Navbar`. `SeasonSelect` above is the other one.
 
 See [[Pages and Routes]] for how these get assembled.
