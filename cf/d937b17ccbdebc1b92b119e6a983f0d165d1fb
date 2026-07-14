@@ -1,0 +1,27 @@
+components/media/SeasonEpisodes.tsx
+  s_76fb4b707d8bde::t_ab6e1c6a924a4f 17
+components/media/SeasonSelect.tsx
+  s_76fb4b707d8bde::t_801bcb8bbbc7b8 65
+  s_76fb4b707d8bde::t_83090c41458d96 3,5,9-14,19-39,42-64,66-85
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "cfd937b17ccbdebc1b92b119e6a983f0d165d1fb",
+  "prompts": {},
+  "humans": {
+    "h_b3232c20134322": {
+      "author": "mandeepmourya007 <mandeepmourya007@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_76fb4b707d8bde": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01878912-9867-4a95-8751-5b0344932d8d",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "mandeepmourya007 <mandeepmourya007@gmail.com>"
+    }
+  }
+}
